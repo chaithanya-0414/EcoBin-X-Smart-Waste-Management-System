@@ -117,100 +117,63 @@
                 <img src="assets/icon.png" alt="EcoBin-X Icon">
                 EcoBin-X
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="serv.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" <i
+                class="fas fa-award trophy-icon"></i>
+                <h2 class="mb-3" style="color: var(--color-primary-light);">College Hackathon 2024</h2>
+                <p class="lead mb-4">
+                    We are proud to announce that <strong>EcoBin-X</strong> secured the <strong>2nd
+                        Place</strong> in the prestigious College Hackathon!
+                </p>
+                <p class="text-muted mb-4">
+                    Competing against innovative projects from various domains, our smart waste management
+                    solution stood out for its practical application of IoT, real-time monitoring capabilities,
+                    and potential for positive environmental impact. This recognition validates our mission to
+                    create cleaner, smarter cities.
+                </p>
 
-    <!-- Header -->
-    <div class="header">
-        <h1 class="animate__animated animate__fadeInDown">Our Achievements</h1>
-        <p class="intro animate__animated animate__fadeInUp">Recognized for innovation in sustainable technology</p>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container main-content">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-
-                <!-- Achievement Card -->
-                <div class="achievement-card animate__animated animate__zoomIn">
-                    <div class="achievement-img-container">
-                        <!-- PLACEHOLDER IMAGE: Replace 'assets/pic.jpg' with your actual hackathon photo -->
-                        <img src="assets/pic.jpg" alt="Hackathon Team" class="achievement-img">
-                        <div class="badge-overlay">
-                            <i class="fas fa-trophy me-2"></i>2nd Place Winner
-                        </div>
+                <div class="d-flex justify-content-center gap-3">
+                    <div class="text-start">
+                        <h5 style="color: var(--color-text-primary);"><i
+                                class="fas fa-check-circle text-success me-2"></i>Innovation</h5>
+                        <p class="small text-muted">Recognized for unique IoT integration</p>
                     </div>
-
-                    <div class="achievement-content text-center">
-                        <i class="fas fa-award trophy-icon"></i>
-                        <h2 class="mb-3" style="color: var(--color-primary-light);">College Hackathon 2024</h2>
-                        <p class="lead mb-4">
-                            We are proud to announce that <strong>EcoBin-X</strong> secured the <strong>2nd
-                                Place</strong> in the prestigious College Hackathon!
-                        </p>
-                        <p class="text-muted mb-4">
-                            Competing against innovative projects from various domains, our smart waste management
-                            solution stood out for its practical application of IoT, real-time monitoring capabilities,
-                            and potential for positive environmental impact. This recognition validates our mission to
-                            create cleaner, smarter cities.
-                        </p>
-
-                        <div class="d-flex justify-content-center gap-3">
-                            <div class="text-start">
-                                <h5 style="color: var(--color-text-primary);"><i
-                                        class="fas fa-check-circle text-success me-2"></i>Innovation</h5>
-                                <p class="small text-muted">Recognized for unique IoT integration</p>
-                            </div>
-                            <div class="text-start">
-                                <h5 style="color: var(--color-text-primary);"><i
-                                        class="fas fa-check-circle text-success me-2"></i>Impact</h5>
-                                <p class="small text-muted">High potential for social good</p>
-                            </div>
-                        </div>
+                    <div class="text-start">
+                        <h5 style="color: var(--color-text-primary);"><i
+                                class="fas fa-check-circle text-success me-2"></i>Impact</h5>
+                        <p class="small text-muted">High potential for social good</p>
                     </div>
                 </div>
-
-            </div>
         </div>
-    </div>
+        </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
-    </div>
+        </div>
+        </div>
+        </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
+        </div>
 
-    <!-- Confetti Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const colors = ['#FFD700', '#FFA500', '#10b981', '#3b82f6', '#ef4444'];
-            const container = document.getElementById('confetti-container');
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                container.appendChild(confetti);
-            }
-        });
-    </script>
+        <!-- Confetti Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const colors = ['#FFD700', '#FFA500', '#10b981', '#3b82f6', '#ef4444'];
+                const container = document.getElementById('confetti-container');
+
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    container.appendChild(confetti);
+                }
+            });
+        </script>
 </body>
 
 </html>

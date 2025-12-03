@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoBin-X Achievements - Award winning smart waste management solution">
+    <title>Achievements - EcoBin-X</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Achievement Specific Styles */
+        .achievement-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            /* Gold border */
+            border-radius: var(--radius-lg);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .achievement-img-container {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .achievement-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover .achievement-img {
+            transform: scale(1.05);
+        }
+
+        .badge-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            animation: bounceIn 1s ease 0.5s both;
+        }
+
+        .achievement-content {
+            padding: 2rem;
+        }
+
+        .trophy-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            animation: fall linear forwards;
+            z-index: -1;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 0;">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/icon.png" alt="EcoBin-X Icon">
+                EcoBin-X
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="serv.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header">
+        <h1 class="animate__animated animate__fadeInDown">Our Achievements</h1>
+        <p class="intro animate__animated animate__fadeInUp">Recognized for innovation in sustainable technology</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <!-- Achievement Card -->
+                <div class="achievement-card animate__animated animate__zoomIn">
+                    <div class="achievement-img-container">
+                        <!-- PLACEHOLDER IMAGE: Replace 'assets/pic.jpg' with your actual hackathon photo -->
+                        <img src="assets/pic.jpg" alt="Hackathon Team" class="achievement-img">
+                        <div class="badge-overlay">
+                            <i class="fas fa-trophy me-2"></i>2nd Place Winner
+                        </div>
+                    </div>
+
+                    <div class="achievement-content text-center">
+                        <i class="fas fa-award trophy-icon"></i>
+                        <h2 class="mb-3" style="color: var(--color-primary-light);">College Hackathon 2024</h2>
+                        <p class="lead mb-4">
+                            We are proud to announce that <strong>EcoBin-X</strong> secured the <strong>2nd
+                                Place</strong> in the prestigious College Hackathon!
+                        </p>
+                        <p class="text-muted mb-4">
+                            Competing against innovative projects from various domains, our smart waste management
+                            solution stood out for its practical application of IoT, real-time monitoring capabilities,
+                            and potential for positive environmental impact. This recognition validates our mission to
+                            create cleaner, smarter cities.
+                        </p>
+
+                        <div class="d-flex justify-content-center gap-3">
+                            <div class="text-start">
+                                <h5 style="color: var(--color-text-primary);"><i
+                                        class="fas fa-check-circle text-success me-2"></i>Innovation</h5>
+                                <p class="small text-muted">Recognized for unique IoT integration</p>
+                            </div>
+                            <div class="text-start">
+                                <h5 style="color: var(--color-text-primary);"><i
+                                        class="fas fa-check-circle text-success me-2"></i>Impact</h5>
+                                <p class="small text-muted">High potential for social good</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Confetti Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colors = ['#FFD700', '#FFA500', '#10b981', '#3b82f6', '#ef4444'];
+            const container = document.getElementById('confetti-container');
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                container.appendChild(confetti);
+            }
+        });
+    </script>
+</body>
+
+</html>

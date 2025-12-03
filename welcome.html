@@ -64,12 +64,19 @@
           <h5>Bin 1 - Waste</h5>
           <p id="wetWasteStatus" class="hidden">Wet Waste Fill Level: Loading...</p>
           <p id="dryWasteStatus" class="hidden">Dry Waste Fill Level: Loading...</p>
-          <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
             <button class="btn btn-primary"
               onclick="window.location.href='https://www.google.com/maps/place/Computer+science+engineering+block/@12.9078997,80.140074,18.68z/data=!4m14!1m7!3m6!1s0x3a525f27b4f39457:0x183db7d7023ad4a7!2sCivil+Department,+Bharath+university!8m2!3d12.9081029!4d80.1402622!16s%2Fg%2F11fy21b3pg!3m5!1s0x3a525f27b6b2c733:0x294487f583159d43!8m2!3d12.9082301!4d80.1404655!16s%2Fg%2F11f_x3pk0l?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D'">View
               Location</button>
             <button class="btn btn-history" onclick="window.location.href='bin.html?bin=1'">Bin History</button>
           </div>
+
+          <!-- Urgent SMS Button (Hidden by default) -->
+          <button id="smsBtn1" class="btn btn-blink hidden" onclick="sendSMS(1)">
+            <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
+          </button>
         </div>
       </div>
 
@@ -79,12 +86,40 @@
           <img src="assets/OIP.jpeg" alt="Smart Bin 2" class="img-fluid" id="bin2Image">
           <h5>Bin 2 - Empty</h5>
           <h6>Bin is not Installed in Area</h6>
-          <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
             <button class="btn btn-primary"
               onclick="window.location.href='https://www.google.com/maps/place/Computer+science+engineering+block/@12.9078997,80.140074,18.68z/data=!4m14!1m7!3m6!1s0x3a525f27b4f39457:0x183db7d7023ad4a7!2sCivil+Department,+Bharath+university!8m2!3d12.9081029!4d80.1402622!16s%2Fg%2F11fy21b3pg!3m5!1s0x3a525f27b6b2c733:0x294487f583159d43!8m2!3d12.9082301!4d80.1404655!16s%2Fg%2F11f_x3pk0l?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D'">View
               Location</button>
             <button class="btn btn-history" onclick="window.location.href='bin.html?bin=2'">Bin History</button>
           </div>
+
+          <!-- Urgent SMS Button (Hidden by default) -->
+          <button id="smsBtn2" class="btn btn-blink hidden" onclick="sendSMS(2)">
+            <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
+          </button>
+        </div>
+      </div>
+
+      <!-- Demo Bin (Always Full) -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="dustbin" id="demoBin" style="border-color: var(--color-danger);">
+          <img src="assets/red_bin.jpg" alt="Demo Bin" class="img-fluid">
+          <h5>Demo Bin - Full</h5>
+          <h6 style="color: var(--color-danger);">⚠️ Simulation Mode</h6>
+          <p class="mb-3" style="color: var(--color-danger); font-weight: bold;">Fill Level: 95% (Critical)</p>
+
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
+            <button class="btn btn-primary" onclick="alert('This is a demo location.')">View Location</button>
+            <button class="btn btn-history" onclick="alert('This is demo history data.')">Bin History</button>
+          </div>
+
+          <!-- Urgent SMS Button (Always Visible) -->
+          <button class="btn btn-blink" onclick="sendSMS('Demo')">
+            <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
+          </button>
         </div>
       </div>
     </div>
@@ -97,6 +132,8 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- JavaScript to Fetch ThingSpeak Data and Update Bin Status -->
   <script>
@@ -116,43 +153,53 @@
         const dryWasteLevel = parseFloat(data.feeds[0].field2);
 
         // Update the bin statuses based on fetched data
-        updateBinStatus("wetWasteStatus", wetWasteLevel, "Wet Waste", "bin1Image");
-        updateBinStatus("dryWasteStatus", dryWasteLevel, "Dry Waste", "bin1Image");
+        updateBinStatus("wetWasteStatus", wetWasteLevel, "Wet Waste", "bin1Image", "smsBtn1");
+        // Assuming Bin 2 uses similar logic or different fields, but for now using same for demo structure
+        // If Bin 2 is not installed, we might not need to update it, but keeping logic consistent
+        // updateBinStatus("dryWasteStatus", dryWasteLevel, "Dry Waste", "bin2Image", "smsBtn2"); 
 
       } catch (error) {
         console.error("Error fetching data from ThingSpeak:", error);
-        // Update statuses to indicate data is unavailable
         document.getElementById("wetWasteStatus").textContent = "Wet Waste Fill Level: Data unavailable";
         document.getElementById("dryWasteStatus").textContent = "Dry Waste Fill Level: Data unavailable";
       }
     }
 
-    function updateBinStatus(statusId, level, type, imageId) {
+    function updateBinStatus(statusId, level, type, imageId, btnId) {
       const wasteStatus = document.getElementById(statusId);
       const binImage = document.getElementById(imageId);
+      const smsBtn = document.getElementById(btnId);
 
       if (!isNaN(level)) {
         wasteStatus.textContent = `${type} Fill Level: ${level}% (available)`;
-        wasteStatus.classList.remove('hidden'); // Show status when data is available
+        wasteStatus.classList.remove('hidden');
 
         // Show "available" only if level is below 10%
         if (level < 10) {
           binImage.src = "assets/red_bin.jpg"; // Image indicating bin is full
+          if (smsBtn) smsBtn.classList.remove('hidden'); // Show SMS button
         } else {
           binImage.src = "assets/OIP.jpeg"; // Normal image
+          if (smsBtn) smsBtn.classList.add('hidden'); // Hide SMS button
         }
       } else {
-        wasteStatus.classList.add('hidden'); // Hide status if data is unavailable
+        wasteStatus.classList.add('hidden');
       }
     }
 
+    function sendSMS(binId) {
+      // Simulation of SMS sending
+      alert(`🚨 SMS Alert Sent!\n\nAuthority has been notified about Bin #${binId} overflow.\nCollection team will be dispatched shortly.`);
+
+      // In a real app, you would call your backend here:
+      // fetch('/api/send-sms', { method: 'POST', body: JSON.stringify({ binId }) });
+    }
+
     function redirectToLocation(location) {
-      // Redirect to the location for the corresponding bin
       window.location.href = `location.html?bin=${location}`;
     }
 
     function redirectToHistory(bin) {
-      // Redirect to the history page for the corresponding bin
       window.location.href = `history.html?bin=${bin}`;
     }
 

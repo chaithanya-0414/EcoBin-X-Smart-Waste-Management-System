@@ -29,7 +29,21 @@
         <img src="assets/icon.png" alt="EcoBin-X Icon">
         EcoBin-X
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="serv.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- Header Slogan -->
@@ -111,265 +125,139 @@
       </div>
     </div>
   </div>
-  <!DOCTYPE html>
-  <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-      content="Real-time waste monitoring dashboard - Track bin levels and manage waste efficiently">
-    <title>Waste Monitoring - EcoBin-X</title>
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
+  </div>
 
-    <!-- Favicons -->
-    <link rel="icon" href="assets/icon.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="assets/icon.png" sizes="192x192" type="image/png">
-    <link rel="apple-touch-icon" href="assets/icon.png" sizes="180x180">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-  </head>
-
-  <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="assets/icon.png" alt="EcoBin-X Icon">
-          EcoBin-X
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="serv.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          </ul>
+  <!-- Toast Notification Container -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+    <div id="smsToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+      aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="fas fa-check-circle me-2"></i>
+          <strong>SMS Sent!</strong> Authority notified successfully.
         </div>
-      </div>
-    </nav>
-
-    <!-- Header Slogan -->
-    <div class="header">
-      <h1>Waste Monitoring</h1>
-      <p class="intro">Efficient waste tracking for a cleaner, greener world.</p>
-    </div>
-
-    <!-- Background Image Container -->
-    <div class="background-image" style="background-image: url('assets/pics.jpg');"></div>
-
-    <!-- Main Content -->
-    <div class="container mt-5 mb-5 main-content">
-      <div class="row mb-4 justify-content-center">
-        <!-- Bin 1 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="dustbin" id="bin1">
-            <img src="assets/OIP.jpeg" alt="Smart Bin 1" class="img-fluid" id="bin1Image">
-            <h5>Bin 1 - Waste</h5>
-            <p id="wetWasteStatus" class="hidden">Wet Waste Fill Level: Loading...</p>
-            <p id="dryWasteStatus" class="hidden">Dry Waste Fill Level: Loading...</p>
-
-            <!-- Action Buttons -->
-            <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-              <button class="btn btn-primary"
-                onclick="window.location.href='https://www.google.com/maps/place/Computer+science+engineering+block/@12.9078997,80.140074,18.68z/data=!4m14!1m7!3m6!1s0x3a525f27b4f39457:0x183db7d7023ad4a7!2sCivil+Department,+Bharath+university!8m2!3d12.9081029!4d80.1402622!16s%2Fg%2F11fy21b3pg!3m5!1s0x3a525f27b6b2c733:0x294487f583159d43!8m2!3d12.9082301!4d80.1404655!16s%2Fg%2F11f_x3pk0l?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D'">View
-                Location</button>
-              <button class="btn btn-history" onclick="window.location.href='bin.html?bin=1'">Bin History</button>
-            </div>
-
-            <!-- Urgent SMS Button (Hidden by default) -->
-            <button id="smsBtn1" class="btn btn-blink hidden" onclick="sendSMS(1)">
-              <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
-            </button>
-          </div>
-        </div>
-
-        <!-- Bin 2 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="dustbin" id="bin2">
-            <img src="assets/OIP.jpeg" alt="Smart Bin 2" class="img-fluid" id="bin2Image">
-            <h5>Bin 2 - Empty</h5>
-            <h6>Bin is not Installed in Area</h6>
-
-            <!-- Action Buttons -->
-            <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-              <button class="btn btn-primary"
-                onclick="window.location.href='https://www.google.com/maps/place/Computer+science+engineering+block/@12.9078997,80.140074,18.68z/data=!4m14!1m7!3m6!1s0x3a525f27b4f39457:0x183db7d7023ad4a7!2sCivil+Department,+Bharath+university!8m2!3d12.9081029!4d80.1402622!16s%2Fg%2F11fy21b3pg!3m5!1s0x3a525f27b6b2c733:0x294487f583159d43!8m2!3d12.9082301!4d80.1404655!16s%2Fg%2F11f_x3pk0l?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D'">View
-                Location</button>
-              <button class="btn btn-history" onclick="window.location.href='bin.html?bin=2'">Bin History</button>
-            </div>
-
-            <!-- Urgent SMS Button (Hidden by default) -->
-            <button id="smsBtn2" class="btn btn-blink hidden" onclick="sendSMS(2)">
-              <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
-            </button>
-          </div>
-        </div>
-
-        <!-- Demo Bin (Always Full) -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="dustbin" id="demoBin" style="border-color: var(--color-danger);">
-            <img src="assets/red_bin.jpg" alt="Demo Bin" class="img-fluid">
-            <h5>Demo Bin - Full</h5>
-            <h6 style="color: var(--color-danger);">⚠️ Simulation Mode</h6>
-            <p class="mb-3" style="color: var(--color-danger); font-weight: bold;">Fill Level: 95% (Critical)</p>
-
-            <!-- Action Buttons -->
-            <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-              <button class="btn btn-primary" onclick="alert('This is a demo location.')">View Location</button>
-              <button class="btn btn-history" onclick="alert('This is demo history data.')">Bin History</button>
-            </div>
-
-            <!-- Urgent SMS Button (Always Visible) -->
-            <button class="btn btn-blink" onclick="sendSMS('Demo')">
-              <i class="fas fa-exclamation-triangle me-2"></i>Send SMS Alert
-            </button>
-          </div>
-        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
       </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
-    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Toast Notification Container -->
-    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
-      <div id="smsToast" class="toast align-items-center text-white bg-success border-0" role="alert"
-        aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-            <i class="fas fa-check-circle me-2"></i>
-            <strong>SMS Sent!</strong> Authority notified successfully.
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-      </div>
-    </div>
+  <!-- JavaScript to Fetch ThingSpeak Data and Update Bin Status -->
+  <script>
+    // Your API Key
+    const API_KEY = '617P3MT6LMXU1CEM';
+    // URL for ThingSpeak channel
+    const THINGSPEAK_URL = `https://api.thingspeak.com/channels/2623279/feeds.json?results=1&api_key=${API_KEY}`;
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    async function fetchThingSpeakData() {
+      try {
+        // Fetch the data from the ThingSpeak channel
+        let response = await fetch(THINGSPEAK_URL);
+        let data = await response.json();
 
-    <!-- JavaScript to Fetch ThingSpeak Data and Update Bin Status -->
-    <script>
-      // Your API Key
-      const API_KEY = '617P3MT6LMXU1CEM';
-      // URL for ThingSpeak channel
-      const THINGSPEAK_URL = `https://api.thingspeak.com/channels/2623279/feeds.json?results=1&api_key=${API_KEY}`;
+        // Extracting both field values
+        const wetWasteLevel = parseFloat(data.feeds[0].field1);
+        const dryWasteLevel = parseFloat(data.feeds[0].field2);
 
-      async function fetchThingSpeakData() {
-        try {
-          // Fetch the data from the ThingSpeak channel
-          let response = await fetch(THINGSPEAK_URL);
-          let data = await response.json();
+        // Update the bin statuses based on fetched data
+        updateBinStatus("wetWasteStatus", wetWasteLevel, "Wet Waste", "bin1Image", "smsBtn1");
+        // Assuming Bin 2 uses similar logic or different fields, but for now using same for demo structure
+        // If Bin 2 is not installed, we might not need to update it, but keeping logic consistent
+        // updateBinStatus("dryWasteStatus", dryWasteLevel, "Dry Waste", "bin2Image", "smsBtn2"); 
 
-          // Extracting both field values
-          const wetWasteLevel = parseFloat(data.feeds[0].field1);
-          const dryWasteLevel = parseFloat(data.feeds[0].field2);
+      } catch (error) {
+        console.error("Error fetching data from ThingSpeak:", error);
+        document.getElementById("wetWasteStatus").textContent = "Wet Waste Fill Level: Data unavailable";
+        document.getElementById("dryWasteStatus").textContent = "Dry Waste Fill Level: Data unavailable";
+      }
+    }
 
-          // Update the bin statuses based on fetched data
-          updateBinStatus("wetWasteStatus", wetWasteLevel, "Wet Waste", "bin1Image", "smsBtn1");
-          // Assuming Bin 2 uses similar logic or different fields, but for now using same for demo structure
-          // If Bin 2 is not installed, we might not need to update it, but keeping logic consistent
-          // updateBinStatus("dryWasteStatus", dryWasteLevel, "Dry Waste", "bin2Image", "smsBtn2"); 
+    function updateBinStatus(statusId, level, type, imageId, btnId) {
+      const wasteStatus = document.getElementById(statusId);
+      const binImage = document.getElementById(imageId);
+      const smsBtn = document.getElementById(btnId);
 
-        } catch (error) {
-          console.error("Error fetching data from ThingSpeak:", error);
-          document.getElementById("wetWasteStatus").textContent = "Wet Waste Fill Level: Data unavailable";
-          document.getElementById("dryWasteStatus").textContent = "Dry Waste Fill Level: Data unavailable";
+      if (!isNaN(level)) {
+        wasteStatus.textContent = `${type} Fill Level: ${level}% (available)`;
+        wasteStatus.classList.remove('hidden');
+
+        // Show "available" only if level is below 10%
+        if (level < 10) {
+          binImage.src = "assets/red_bin.jpg"; // Image indicating bin is full
+          if (smsBtn) smsBtn.classList.remove('hidden'); // Show SMS button
+        } else {
+          binImage.src = "assets/OIP.jpeg"; // Normal image
+          if (smsBtn) smsBtn.classList.add('hidden'); // Hide SMS button
         }
+      } else {
+        wasteStatus.classList.add('hidden');
+      }
+    }
+
+    function sendSMS(binId) {
+      // Find the button that was clicked (this is a bit hacky but works for demo)
+      let btn;
+      if (binId === 'Demo') {
+        // Select the last button in the demo bin
+        btn = document.querySelector('#demoBin .btn-blink');
+      } else {
+        btn = document.getElementById(`smsBtn${binId}`);
       }
 
-      function updateBinStatus(statusId, level, type, imageId, btnId) {
-        const wasteStatus = document.getElementById(statusId);
-        const binImage = document.getElementById(imageId);
-        const smsBtn = document.getElementById(btnId);
+      if (!btn) return;
 
-        if (!isNaN(level)) {
-          wasteStatus.textContent = `${type} Fill Level: ${level}% (available)`;
-          wasteStatus.classList.remove('hidden');
+      // 1. Change Button State to "Sending..."
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+      btn.disabled = true;
+      btn.classList.remove('btn-blink'); // Stop blinking while sending
 
-          // Show "available" only if level is below 10%
-          if (level < 10) {
-            binImage.src = "assets/red_bin.jpg"; // Image indicating bin is full
-            if (smsBtn) smsBtn.classList.remove('hidden'); // Show SMS button
-          } else {
-            binImage.src = "assets/OIP.jpeg"; // Normal image
-            if (smsBtn) smsBtn.classList.add('hidden'); // Hide SMS button
-          }
-        } else {
-          wasteStatus.classList.add('hidden');
-        }
-      }
+      // 2. Simulate Network Delay (2 seconds)
+      setTimeout(() => {
+        // 3. Show Success Toast
+        const toastEl = document.getElementById('smsToast');
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
 
-      function sendSMS(binId) {
-        // Find the button that was clicked (this is a bit hacky but works for demo)
-        let btn;
-        if (binId === 'Demo') {
-          // Select the last button in the demo bin
-          btn = document.querySelector('#demoBin .btn-blink');
-        } else {
-          btn = document.getElementById(`smsBtn${binId}`);
-        }
+        // 4. Reset Button State
+        btn.innerHTML = '<i class="fas fa-check me-2"></i>Sent';
+        btn.classList.remove('btn-danger'); // Remove red
+        btn.classList.add('btn-success');   // Add green
 
-        if (!btn) return;
-
-        // 1. Change Button State to "Sending..."
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-        btn.disabled = true;
-        btn.classList.remove('btn-blink'); // Stop blinking while sending
-
-        // 2. Simulate Network Delay (2 seconds)
+        // Optional: Revert back to original state after 5 seconds
         setTimeout(() => {
-          // 3. Show Success Toast
-          const toastEl = document.getElementById('smsToast');
-          const toast = new bootstrap.Toast(toastEl);
-          toast.show();
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          btn.classList.remove('btn-success');
+          btn.classList.add('btn-blink'); // Start blinking again
+        }, 5000);
 
-          // 4. Reset Button State
-          btn.innerHTML = '<i class="fas fa-check me-2"></i>Sent';
-          btn.classList.remove('btn-danger'); // Remove red
-          btn.classList.add('btn-success');   // Add green
+      }, 2000);
+    }
 
-          // Optional: Revert back to original state after 5 seconds
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-blink'); // Start blinking again
-          }, 5000);
+    function redirectToLocation(location) {
+      window.location.href = `location.html?bin=${location}`;
+    }
 
-        }, 2000);
-      }
+    function redirectToHistory(bin) {
+      window.location.href = `history.html?bin=${bin}`;
+    }
 
-      function redirectToLocation(location) {
-        window.location.href = `location.html?bin=${location}`;
-      }
+    // Fetch data every 10 seconds
+    setInterval(fetchThingSpeakData, 10000);
 
-      function redirectToHistory(bin) {
-        window.location.href = `history.html?bin=${bin}`;
-      }
+    // Initial fetch on page load
+    fetchThingSpeakData();
+  </script>
+</body>
 
-      // Fetch data every 10 seconds
-      setInterval(fetchThingSpeakData, 10000);
-
-      // Initial fetch on page load
-      fetchThingSpeakData();
-    </script>
-  </body>
-
-  </html>
+</html>

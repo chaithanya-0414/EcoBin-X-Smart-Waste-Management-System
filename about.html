@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="About EcoBin-X - Empowering sustainable waste management through innovative technology">
+  <meta name="description" content="About EcoBin-X - Our mission, vision, and team">
   <title>About Us - EcoBin-X</title>
 
   <!-- Favicon -->
@@ -14,8 +13,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <!-- Animate.css -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -32,102 +34,101 @@
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="serv.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Header Section -->
-  <div class="header animate__animated animate__fadeInDown">
-    <h1>About Us</h1>
-    <p class="intro">Empowering sustainable waste management through innovative technology</p>
+  <!-- Header -->
+  <div class="header">
+    <h1 class="animate__animated animate__fadeInDown">About Us</h1>
+    <p class="intro animate__animated animate__fadeInUp">Innovating for a cleaner, greener tomorrow.</p>
   </div>
 
-  <!-- Main Content -->
-  <div class="container main-content">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-
-        <!-- Mission Statement -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Our Mission</h2>
-          <p class="lead">At EcoBin-X, our mission is to revolutionize waste management practices by integrating
-            cutting-edge technology to promote a cleaner, greener world. We are committed to reducing waste
-            inefficiencies and enabling communities, businesses, and cities to monitor, manage, and minimize their
-            environmental impact.</p>
-        </section>
-
-        <!-- Vision Statement -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Our Vision</h2>
-          <p class="lead">We envision a future where sustainable waste management is accessible and achievable for all,
-            where every bin is smart, efficient, and contributes to a sustainable, waste-free world.</p>
-        </section>
-
-        <!-- Our Story -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Our Story</h2>
-          <p class="lead">EcoBin-X was founded in 2024 by a team of environmental and technology enthusiasts who saw the
-            growing need for smarter waste solutions in urban environments. Recognizing the environmental impact of
-            inefficient waste disposal, we developed EcoBin-X to offer real-time waste monitoring, helping cities and
-            businesses optimize their waste collection processes.</p>
-        </section>
-
-        <!-- Our Technology -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Our Technology</h2>
-          <p class="lead">EcoBin-X's solution leverages IoT sensors and data analytics to monitor waste levels in
-            real-time, providing insights that facilitate efficient collection and reduce unnecessary pickups. Our
-            system notifies users about the fill levels of each bin, optimizing collection schedules and minimizing fuel
-            consumption and operational costs.</p>
-        </section>
-
-        <!-- Sustainability Commitment -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Our Commitment to Sustainability</h2>
-          <p class="lead">We are dedicated to reducing carbon emissions associated with waste collection by cutting down
-            on unnecessary routes. Additionally, our efforts to educate communities on waste separation and responsible
-            disposal practices aim to inspire long-term sustainability behaviors among citizens.</p>
-        </section>
-
-        <!-- Meet the Team -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Meet the Team</h2>
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <img src="assets/team_photo.jpg" class="img-fluid rounded shadow-lg mb-3" alt="EcoBin-X Team">
-            </div>
-            <div class="col-md-6">
-              <p class="lead">We are a group of passionate engineering students dedicated to solving real-world problems
-                through technology. Our diverse skills in hardware, software, and design came together to create
-                EcoBin-X.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Get Involved -->
-        <section class="mb-5 animate__animated animate__fadeInUp">
-          <h2 class="service-title text-start">Get Involved</h2>
-          <p class="lead">Are you passionate about sustainable waste management? We're always looking for like-minded
-            individuals and partners to join us on this journey. Reach out to us via our Contact page to learn more
-            about career opportunities, partnerships, or how you can contribute to a cleaner planet.</p>
-
-          <!-- Call to Action Button -->
-          <div class="text-center mt-4">
-            <button class="btn btn-primary" onclick="location.href='contact.html'">Contact Us</button>
-          </div>
-        </section>
-
+  <!-- About Section -->
+  <div class="container service-section">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 animate__animated animate__fadeInLeft">
+        <img src="assets/pics.jpg" alt="About EcoBin-X" class="img-fluid rounded shadow-lg">
+      </div>
+      <div class="col-lg-6 animate__animated animate__fadeInRight">
+        <h2 class="service-title text-start">Our Mission</h2>
+        <p class="lead">
+          At EcoBin-X, we are dedicated to revolutionizing waste management through smart technology. Our
+          mission is to create sustainable, efficient, and data-driven solutions that empower communities to
+          manage waste responsibly.
+        </p>
+        <p>
+          We believe that technology can bridge the gap between waste generation and disposal, reducing
+          environmental impact and promoting a circular economy.
+        </p>
+        <button class="cta-btn mt-3" onclick="location.href='contact.html'">Join Our Mission</button>
       </div>
     </div>
+
+    <div class="row mb-5">
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center h-100">
+          <i class="fas fa-lightbulb fa-3x mb-3 text-warning"></i>
+          <h4>Innovation</h4>
+          <p>Leveraging IoT and AI to build smarter waste management systems.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center h-100">
+          <i class="fas fa-globe-americas fa-3x mb-3 text-success"></i>
+          <h4>Sustainability</h4>
+          <p>Reducing carbon footprint and promoting eco-friendly practices.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center h-100">
+          <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+          <h4>Community</h4>
+          <p>Engaging citizens and authorities for cleaner neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet the Team Section -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 text-center mb-4">
+        <h2 class="service-title">Meet the Team</h2>
+        <p class="text-muted">The minds behind EcoBin-X</p>
+      </div>
+      <div class="col-md-8">
+        <div class="service-card text-center">
+          <img src="assets/team_photo.jpg" alt="EcoBin-X Team" class="img-fluid rounded mb-3"
+            style="max-height: 400px; object-fit: cover;">
+          <h4>Team EcoBin-X</h4>
+          <p>
+            We are a group of passionate engineers and environmental enthusiasts committed to solving real-world
+            problems. Our diverse skills in hardware, software, and design come together to bring EcoBin-X to
+            life.
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Footer -->
-  <div class="footer animate__animated animate__fadeInUp">
+  <div class="footer">
     <p>&copy; 2024 EcoBin-X. All rights reserved.</p>
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
